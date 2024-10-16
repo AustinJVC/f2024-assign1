@@ -3,19 +3,33 @@ body {
     margin: 20px;
 }
 
-nav{
-    align-items: right;
+nav {
+    margin-bottom:20px;
+    text-align: right;
 }
 
-header h1{
-    align-items: left;
+nav a{
+    background-color: #6AABCE;
+    color:white;
+    font-weight: 600;
+    border-radius: 0.2em;
+    padding:0.5em;
+    margin: 10px;
+    text-decoration: none;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+h1{
+    text-align: center;
 }
 header a:hover {
     background-color: #6AABCE;
 }
 
-image{
-    width:10em;
+img{
+    width:100em;
     height:auto;
 }
 
