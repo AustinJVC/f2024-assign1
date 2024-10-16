@@ -3,17 +3,11 @@ body {
     margin: 20px;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: auto;
-}
-
 header h1 {
     align-items: center;
 }
 
-header a {
+header nav{
     margin-right: 15px;
     text-decoration: none;
     color:white;
