@@ -17,7 +17,8 @@ header h1 {
 header a {
     margin-right: 15px;
     text-decoration: none;
-    color: #007BFF;
+    color:white;
+    background-color: #2E5266;
     align-items: center;
 }
 
