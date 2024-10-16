@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
     <head>
@@ -17,14 +17,32 @@
             <a href='apis.php'>APIs</a>
         </header>
         <sidebar>
-<!--
-    Side Content
--->
+            
+            <?php
+                $races=[
+                    ["British Grand Prix","Link"],
+                    ["Italian Grand Prix", "Link"],
+                ];
+                echo '<table>';
+                echo '<caption>2022 Races</caption>';
+                echo '<tr>
+                            <th>Rnd</th>
+                            <th>Circuit</th>
+                        </tr>';
+
+                
+                foreach($races as $race){
+                    echo '<tr>';
+                    echo "<td>$race[0]</td>";
+                    echo "<td><a href=$race[1]>Results</a></td>";
+                    echo '</tr>';
+                };
+                
+            ?>
         </sidebar>
         <div class='content'>
-        <!--
-    Main center content goes here
--->
+
+            <h2>Please Select a race</h2>        
 
         </div>
     </body>
