@@ -18,19 +18,15 @@
         </nav>
     </header>
     <div class="container">
-        
+
         <aside>
             <p>Description</p>
             <a href="browse.php">Browse 2022 Season</a>
         </aside>
-        
+
         <div class='content'>
-<<<<<<< Updated upstream
-            
-=======
-            <!-- Main content goes here -->
-             <img src="assign1/images/Home1.png"
->>>>>>> Stashed changes
+            <img src="../images/Home1.png">
+
         </div>
     </div>
 </body>
