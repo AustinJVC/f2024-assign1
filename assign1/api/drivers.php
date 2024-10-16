@@ -13,7 +13,7 @@ function getRaceDrivers($raceId){
 function getrefDrivers($ref){
     $driver = getData("SELECT * FROM drivers  where driverRef=?", [$ref]);
 
-    echo json_encode($driver); 
+        echo json_encode($driver); 
 }
 
 if(isset($_GET['race'])){
