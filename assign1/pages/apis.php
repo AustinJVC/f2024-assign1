@@ -12,9 +12,11 @@
     <body>
        <header>
             <h1> F1 Dashboard Project </h1>
-            <a href='home.php'>Home</a>
-            <a href='browse.php'>Browse</a>
-            <a href='apis.php'>APIs</a>
+            <nav>
+                <a href='home.php'>Home</a>
+                <a href='browse.php'>Browse</a>
+                <a href='apis.php'>APIs</a>
+            </nav>
         </header>
         
         <div class='content'>

@@ -7,7 +7,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: auto;
-    margin-bottom: 20px;
 }
 
 header h1 {
@@ -20,18 +19,17 @@ header a {
     color:white;
     background-color: #2E5266;
     align-items: center;
+    padding:20px;
 }
 
 header a:hover {
-    text-decoration: underline;
+    background-color: #6AABCE;
 }
 
 .container {
     display: grid;
     grid-template-columns: 200px 1fr;
-    /* 200px for aside, remaining space for content */
     gap: 20px;
-    /* Space between columns */
 }
 
 aside {
