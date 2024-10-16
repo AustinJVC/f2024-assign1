@@ -3,21 +3,20 @@ body {
     margin: 20px;
 }
 
-header h1 {
-    align-items: center;
+nav{
+    align-items: right;
 }
 
-header nav{
-    margin-right: 15px;
-    text-decoration: none;
-    color:white;
-    background-color: #2E5266;
-    align-items: center;
-    padding:20px;
+header h1{
+    align-items: left;
 }
-
 header a:hover {
     background-color: #6AABCE;
+}
+
+image{
+    width:10em;
+    height:auto;
 }
 
 .container {
