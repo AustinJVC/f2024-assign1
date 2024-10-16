@@ -1,16 +1,9 @@
-/api/qualifying.php?ref=?
-Returns the qualifying results for the specified race, e.g., /api/qualifying/1106
-Provide the same fields as with results for the foreign keys.
-Sort by the field position in ascending order.
-
 <?php
 
-include 'db_connection.php';
-function getQualifying()
+include 'db.inc.php';
+function getQualifying($ref)
 {
-    if (isset($_GET['raceID'])) {
-        $raceRef = $_GET['raceID'];
-
+    
         $qualifyingResults = getData(
             "SELECT
             qualifying.position,
@@ -31,13 +24,15 @@ function getQualifying()
          JOIN constructors ON qualifying.constructorId = constructors.constructorId
          WHERE qualifying.raceId = ?
          ORDER BY qualifying.position ASC",
-            [$raceRef]
+            [$ref]
         );
 
-        return json_encode($qualifyingResults);
-    } else {
-        return json_encode(['error' => 'Race reference not provided.']);
-    }
-
+        echo json_encode($qualifyingResults);
 }
+
+if (isset($_GET['ref'])) {
+    getQualifying($_GET['ref']);
+}
+
+
 ?>
