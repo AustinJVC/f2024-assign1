@@ -1,22 +1,29 @@
-</p>
-/api/drivers.php
-Returns all the drivers for the season
-/api/drivers.php?ref=?
-Returns just the specified driver (use the driverRef field), e.g., /api/drivers/hamilton
-/api/drivers.php?race=?
-Returns the drivers within a given race, e.g., /api/drivers/race/1106
-<p>
 
 <?php
 include 'db.inc.php';
+function getAllDrivers(){
+        $drivers = getData("SELECT forename FROM drivers", []); 
+        echo json_encode($drivers);
+}
+function getRaceDrivers($raceId){
+        $drivers = getData("SELECT drivers.forename, drivers.surname FROM drivers join results ON drivers.driverId=results.driverId JOIN races on results.raceId = races.raceId where races.raceId=?", [$raceId]);
 
-    $drivers = getData("SELECT forename FROM drivers", []);
-    
-    foreach ($drivers as $driver) {
-        echo $driver['forename'] . "<br>"; 
-    }
-    
+        echo json_encode($drivers); 
+}
+function getrefDrivers($ref){
+    $driver = getData("SELECT * FROM drivers  where driverRef=?", [$ref]);
 
+    echo json_encode($driver); 
+}
+
+if(isset($_GET['race'])){
+    getRaceDrivers($_GET['race']);
+}elseif (isset($_GET['ref'])){
+    getRefDrivers($_GET['ref']);
+}
+else{
+    getAllDrivers();
+}
 
 
 ?>

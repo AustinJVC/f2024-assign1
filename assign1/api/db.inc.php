@@ -16,9 +16,9 @@ function getData($sql, $param){
         }
         $stmt -> execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        return $result;
         $db = null;
+        return $result;
+        
     } else {
         // Execute the query directly if no parameters are needed
         $result = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC); 
