@@ -1,5 +1,32 @@
-/api/races.php?ref=?
-Returns just the specified race. Don’t provide the foreign key for the circuit; instead provide the circuit name,
-location, and country.
-/api/races.php
-Returns the races within the 2022 season ordered by round, e.g., /api/races/season/2022
+<?php
+include 'db.inc.php';
+
+function getAllRaces()
+{
+    $races = getData("SELECT name FROM races WHERE year = ? ORDER BY round", [2022]);
+
+    return json_encode($races);
+}
+
+function getSpecificRaces($ref)
+{
+    $racesSpec = getData(
+        "SELECT races.name, circuits.name, circuits.location, circuits.country
+         FROM races
+         JOIN circuits ON races.circuitId = circuits.circuitId
+         WHERE races.raceId = ? AND races.year = ?",
+        [$ref, 2022]
+    );
+
+    return json_encode($racesSpec);
+}
+
+
+if (isset($_GET["ref"])) {
+    $response = getSpecificRaces($_GET['ref']);
+    echo $response;
+} else {
+    $response = getAllRaces();
+    echo $response;
+}
+?>
