@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: auto;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    align-items: center;
+}
+
+header a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007BFF;
+    align-items: center;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /* 200px for aside, remaining space for content */
+    gap: 20px;
+    /* Space between columns */
+}
+
+aside {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
