@@ -25,7 +25,12 @@
         </aside>
         
         <div class='content'>
+<<<<<<< Updated upstream
             
+=======
+            <!-- Main content goes here -->
+             <img src="assign1/images/Home1.png"
+>>>>>>> Stashed changes
         </div>
     </div>
 </body>
