@@ -3,9 +3,9 @@
 include_once('db.inc.php');
 function getQualifying($ref)
 {
-    
-        $qualifyingResults = getData(
-            "SELECT
+
+    $qualifyingResults = getData(
+        "SELECT
             qualifying.position,
             drivers.driverRef,
             drivers.code,
@@ -17,17 +17,17 @@ function getQualifying($ref)
             races.date,
             constructors.name AS constructor_name,
             constructors.constructorRef,
-            constructors.nationality
+            constructors.nationality,qualifying.q1,qualifying.q2,qualifying.q3
          FROM qualifying
          JOIN drivers ON qualifying.driverId = drivers.driverId
          JOIN races ON qualifying.raceId = races.raceId
          JOIN constructors ON qualifying.constructorId = constructors.constructorId
          WHERE qualifying.raceId = ? AND races.year=2022
          ORDER BY qualifying.position ASC",
-            [$ref]
-        );
+        [$ref]
+    );
 
-        return json_encode($qualifyingResults);
+    return json_encode($qualifyingResults);
 }
 
 if (isset($_GET['ref'])) {
