@@ -59,24 +59,25 @@
                         <th>Q3</th>
                       </tr>';
 
-            include_once('../api/qualifying.php');
-            $qualifying = json_decode(getQualifying($race), true);
+                include_once('../api/qualifying.php');
+                $qualifying = json_decode(getQualifying($race), true);
 
-                    foreach($qualifying as $qualifier){
-                        echo '<tr>';
-                        echo "<td>".$qualifier['position']."</td>";
-                        echo "<td> <a href=driver.php?ref=".$qualifier['driverRef'].">".$qualifier['forename']." ".$qualifier['surname']."</a></td>";
-                        echo "<td>".$qualifier['constructor_name']."</td>";
-                        echo "<td>".$qualifier['q1']."</td>";
-                        echo "<td>".$qualifier['q2']."</td>";
-                        echo "<td>".$qualifier['q3']."</td>";
-                        echo '</tr>';
-                    };
-                    echo "</table>";
-                } else {
-                    echo '<h1>Select A Race</h1>';
-    
+                foreach ($qualifying as $qualifier) {
+                    echo '<tr>';
+                    echo "<td>" . $qualifier['position'] . "</td>";
+                    echo "<td> <a href=driver.php?ref=" . $qualifier['driverRef'] . ">" . $qualifier['forename'] . " " . $qualifier['surname'] . "</a></td>";
+                    echo "<td> <a href=constructor.php?ref=" . $qualifier['constructor_name'] . ">" . $qualifier['constructor_name'] . "</td>";
+                    echo "<td>" . $qualifier['q1'] . "</td>";
+                    echo "<td>" . $qualifier['q2'] . "</td>";
+                    echo "<td>" . $qualifier['q3'] . "</td>";
+                    echo '</tr>';
                 }
+                ;
+                echo "</table>";
+            } else {
+                echo '<h1>Select A Race</h1>';
+
+            }
             ?>
         </div>
     </section>
