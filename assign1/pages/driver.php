@@ -30,7 +30,7 @@
                     $birthday = new DateTime($driver['dob']);
                     $age = $now->diff($birthday)->format('%y years');
 
-
+                    echo "Driver Details";
                     echo "<ul>";
                     echo "<li>".$driver['forename']." ".$driver['surname']."</li>";
                     echo "<li>".$driver['dob']."</li>";
@@ -46,7 +46,8 @@
         <div class='content'>
                     
             <?php
-                
+                echo "<h2>Race Results</h2>";
+                //Add the race results.
                 
             ?>
         </div>

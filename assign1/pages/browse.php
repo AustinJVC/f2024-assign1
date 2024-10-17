@@ -58,10 +58,6 @@
                         <th>Q2</th>
                         <th>Q3</th>
                       </tr>';
-            } else {
-                echo '<h1>Select A Race</h1>';
-
-            }
 
             include_once('../api/qualifying.php');
             $qualifying = json_decode(getQualifying($race), true);
@@ -76,6 +72,10 @@
                         echo "<td>".$qualifier['q3']."</td>";
                         echo '</tr>';
                     };
+                } else {
+                    echo '<h1>Select A Race</h1>';
+    
+                }
             ?>
         </div>
     </section>
