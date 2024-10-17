@@ -37,12 +37,14 @@ img{
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 20px;
+    padding:50px;
 }
 
 aside {
     border: 1px solid #ccc;
     padding: 10px;
     background-color: #f9f9f9;
+    
 }
 
 .content {

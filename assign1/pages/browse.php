@@ -12,18 +12,18 @@
     <body>
             <h1> F1 Dashboard Project </h1>
             <nav>
-                <a href='home.php'>Home</a>
+                <a href='index.php'>Home</a>
                 <a href='browse.php'>Browse</a>
                 <a href='apis.php'>APIs</a>
             </nav>
         <div class='container'>  
             <aside>
-                
                 <?php
-                    $races=[
-                        ["British Grand Prix","Link"],
-                        ["Italian Grand Prix", "Link"],
-                    ];
+                    
+                    include '../api/races.php';
+                    
+                    $races = json_decode(getAllRaces(), true);
+                    
                     echo '<table>';
                     echo '<caption>2022 Races</caption>';
                     echo '<tr>
@@ -31,11 +31,10 @@
                                 <th>Circuit</th>
                             </tr>';
 
-                    
                     foreach($races as $race){
                         echo '<tr>';
-                        echo "<td>$race[0]</td>";
-                        echo "<td><a href=$race[1]>Results</a></td>";
+                        echo "<td>".$race['name']."</td>";
+                        echo "<td><a>Results</a></td>";
                         echo '</tr>';
                     };
                     
