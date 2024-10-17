@@ -46,8 +46,35 @@
         <div class='content'>
                     
             <?php
-                echo "<h2>Race Results</h2>";
-                //Add the race results.
+                
+                if (isset($_GET['ref'])) {
+                    $driverRef = $_GET['ref'];
+                    echo '<table>';
+                    echo '<caption>Race Results</caption>';
+                    echo '<tr>
+                            <th>Rnd</th>
+                            <th>Circuit</th>
+                            <th>Pos</th>
+                            <th>Points</th>
+                          </tr>';
+    
+                include_once('../api/results.php');
+
+                $results = json_decode(getDriverResults($driverRef), true);
+                
+                    foreach($results as $result){
+                        echo '<tr>';
+                        echo "<td>".$result['round']."</td>";
+                        echo "<td>".$result['name']."</td>";
+                        echo "<td>".$result['position']."</td>";
+                        echo "<td>".$result['points']."</td>";
+                        echo '</tr>';
+                    };
+                        echo "</table>";
+                    } else {
+                        echo '<h1>Select A Race</h1>';
+        
+                    }
                 
             ?>
         </div>

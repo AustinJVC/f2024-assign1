@@ -1,19 +1,21 @@
 <?php
 include_once('db.inc.php');
 
-function getRaceResults($raceId){
+function getRaceResults($ref){
         $results = getData("SELECT drivers.driverRef, drivers.code, drivers.forename, drivers.surname, races.name, races.round, races.year, races.date, constructors.name, constructors.constructorRef, constructors.nationality 
         FROM results 
         JOIN drivers ON drivers.driverId=results.driverId 
         JOIN constructors ON constructors.constructorId=results.constructorId 
-        JOIN races ON races.raceId=results.raceId WHERE results.raceId=? ", [$raceId]);
+        JOIN races ON races.raceId=results.raceId WHERE results.raceId=? ", [$ref]);
 
         return json_encode($results); 
 }
 function getDriverResults($driver){
-    $results = getData("SELECT drivers.forename, drivers.surname, results.position 
+    $results = getData("SELECT drivers.forename, drivers.surname, results.position, results.points, races.round, circuits.name
         from results 
         join drivers on drivers.driverId = results.driverId 
+        join races on races.raceId = results.raceId
+        join circuits on circuits.circuitId = races.circuitId
         where drivers.driverRef=?", [$driver]);
 
         return json_encode($results); 
