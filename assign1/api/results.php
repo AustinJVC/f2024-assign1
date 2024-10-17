@@ -20,11 +20,25 @@ function getDriverResults($driver){
 
         return json_encode($results); 
 }
+function getConstructorResults($constructorRef){
+    $results = getData("SELECT drivers.forename, drivers.surname, results.position, results.points, races.round, circuits.name
+        from results 
+        join drivers on drivers.driverId = results.driverId 
+        join races on races.raceId = results.raceId
+        join circuits on circuits.circuitId = races.circuitId
+        join constructors on constructors.constructorId = results.constructorId
+        where constructors.constructorRef=?", [$constructorRef]);
+
+        return json_encode($results); 
+}
 
 if(isset($_GET['ref'])){
     getRaceResults($_GET['ref']);
 }elseif (isset($_GET['driver'])){
     getDriverResults($_GET['driver']);
+}
+elseif (isset($_GET['constructorRef'])){
+    getConstructorResults($_GET['constructorRef']);
 }
 else{
     echo json_encode("No reference passed.");

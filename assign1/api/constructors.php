@@ -18,7 +18,7 @@ function getAllConstructors()
 function getSpecificConstructors($ref)
 {
     $constructors = getData(
-        "SELECT DISTINCT constructors.constructorRef, constructors.constructorId, races.year
+        "SELECT DISTINCT constructors.name, constructors.constructorId, races.year, constructors.nationality, constructors.url
         FROM constructors 
         JOIN constructorResults ON constructors.constructorId = constructorResults.constructorId
         JOIN races ON constructorResults.raceId = races.raceId

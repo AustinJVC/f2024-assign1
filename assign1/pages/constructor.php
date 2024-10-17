@@ -24,10 +24,10 @@
         include_once('../api/constructors.php');
         $constructorRef = $_GET['ref'];
 
+
         $constructor = json_decode(getSpecificConstructors($constructorRef), true);
-        var_dump($constructor);
 
-
+        $constructor = $constructor[0];
 
 
 
@@ -44,11 +44,37 @@
     </aside>
     <div class='content'>
 
-        <?php
-        echo "<h2>Race Results</h2>";
-        //Add the race results.
-        
-        ?>
+    <?php
+                
+                if (isset($_GET['ref'])) {
+                    $constructorRef = $_GET['ref'];
+                    echo '<table>';
+                    echo '<caption>Race Results</caption>';
+                    echo '<tr>
+                            <th>Rnd</th>
+                            <th>Circuit</th>
+                            <th>Driver</th>
+                            <th>Pos</th>
+                            <th>Points</th>
+                          </tr>';
+    
+                include_once('../api/results.php');
+
+                $results = json_decode(getConstructorResults($constructorRef), true);
+                
+                    foreach($results as $result){
+                        echo '<tr>';
+                        echo "<td>".$result['round']."</td>";
+                        echo "<td>".$result['name']."</td>";
+                        echo "<td>".$result['forename']." ".$result['surname']."</td>";
+                        echo "<td>".$result['position']."</td>";
+                        echo "<td>".$result['points']."</td>";
+                        echo '</tr>';
+                    };
+                        echo "</table>";
+                }
+                
+            ?>
     </div>
 </body>
 
