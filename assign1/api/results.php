@@ -1,5 +1,5 @@
 <?php
-include 'db.inc.php';
+include_once('db.inc.php');
 
 function getRaceResults($raceId){
         $results = getData("SELECT drivers.driverRef, drivers.code, drivers.forename, drivers.surname, races.name, races.round, races.year, races.date, constructors.name, constructors.constructorRef, constructors.nationality 

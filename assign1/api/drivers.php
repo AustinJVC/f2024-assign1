@@ -1,6 +1,6 @@
 
 <?php
-include 'db.inc.php';
+include_once('db.inc.php');
 function getAllDrivers(){
         $drivers = getData("SELECT forename, surname FROM drivers WHERE driverId IN (SELECT DISTINCT driverId FROM results WHERE raceId IN (SELECT raceId FROM races WHERE year = 2022))", []); 
         return json_encode($drivers);

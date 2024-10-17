@@ -1,6 +1,6 @@
 <?php
 
-include 'db.inc.php';
+include_once('db.inc.php');
 function getQualifying($ref)
 {
     
@@ -33,6 +33,5 @@ function getQualifying($ref)
 if (isset($_GET['ref'])) {
     getQualifying($_GET['ref']);
 }
-
 
 ?>

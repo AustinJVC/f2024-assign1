@@ -1,6 +1,6 @@
 <?php
 
-include "db.inc.php";
+include_once("db.inc.php");
 
 function getAllCircuits()
 {

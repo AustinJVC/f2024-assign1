@@ -1,9 +1,9 @@
 <?php
-include 'db.inc.php';
+include_once('db.inc.php');
 
 function getAllRaces()
 {
-    $races = getData("SELECT name FROM races WHERE year = ? ORDER BY round", [2022]);
+    $races = getData("SELECT name, raceId FROM races WHERE year = ? ORDER BY round", [2022]);
 
     return json_encode($races);
 }
