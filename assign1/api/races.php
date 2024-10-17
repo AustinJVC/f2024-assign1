@@ -24,9 +24,9 @@ function getSpecificRaces($ref)
 
 if (isset($_GET["ref"])) {
     $response = getSpecificRaces($_GET['ref']);
-    echo $response;
+    return $response;
 } else {
     $response = getAllRaces();
-    echo $response;
+    return $response;
 }
 ?>

@@ -1,9 +1,3 @@
-/api/circuits.php
-Returns all the circuits for the season
-
-/api/circuits.php?ref=?
-Returns just the specified circuit (use the circuitRef field), e.g., /api/circuits.php?ref=monaco
-
 <?php
 
 include "db.inc.php";
@@ -17,7 +11,7 @@ function getAllCircuits()
     JOIN seasons ON races.year=seasons.year
     WHERE races.year=2022", []);
 
-    echo json_encode($circuits);
+    return json_encode($circuits);
 
 }
 
@@ -29,7 +23,7 @@ function getSpecificCircuits($ref)
         WHERE circuits.circuitRef = ? AND races.year=2022
     ", [$ref]);
 
-    echo json_encode($circuits);
+    return json_encode($circuits);
 }
 
 if (isset($_GET["ref"])) {

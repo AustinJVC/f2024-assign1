@@ -27,7 +27,7 @@ function getQualifying($ref)
             [$ref]
         );
 
-        echo json_encode($qualifyingResults);
+        return json_encode($qualifyingResults);
 }
 
 if (isset($_GET['ref'])) {
