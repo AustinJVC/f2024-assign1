@@ -72,6 +72,7 @@
                         echo "<td>".$qualifier['q3']."</td>";
                         echo '</tr>';
                     };
+                    echo "</table>";
                 } else {
                     echo '<h1>Select A Race</h1>';
     
