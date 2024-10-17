@@ -22,7 +22,7 @@ function getQualifying($ref)
          JOIN drivers ON qualifying.driverId = drivers.driverId
          JOIN races ON qualifying.raceId = races.raceId
          JOIN constructors ON qualifying.constructorId = constructors.constructorId
-         WHERE qualifying.raceId = ?
+         WHERE qualifying.raceId = ? AND races.year=2022
          ORDER BY qualifying.position ASC",
             [$ref]
         );

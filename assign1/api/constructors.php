@@ -1,14 +1,15 @@
+
 <?php
 
 include "db.inc.php";
 
 function getAllConstructors()
 {
-    $constructors = getData("
-        SELECT constructors.constructorRef, races.year
+    $constructors = getData(" SELECT constructors.constructorRef, races.year
         FROM constructors 
         JOIN constructorResults ON constructors.constructorId = constructorResults.constructorId
         JOIN races ON constructorResults.raceId = races.raceId
+        WHERE races.year=2022
     ", []);
 
     echo json_encode($constructors);
@@ -22,7 +23,7 @@ function getSpecificConstructors($ref)
         FROM constructors 
         JOIN constructorResults ON constructors.constructorId = constructorResults.constructorId
         JOIN races ON constructorResults.raceId = races.raceId
-        WHERE constructors.constructorRef = ?",
+        WHERE constructors.constructorRef = ? AND races.year=2022",
         [$ref]
     );
 

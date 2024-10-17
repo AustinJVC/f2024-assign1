@@ -11,7 +11,11 @@ function getAllRaces()
 function getSpecificRaces($ref)
 {
     $racesSpec = getData(
-        "SELECT races.name, circuits.name, circuits.location, circuits.country FROM races JOIN circuits ON races.circuitId = circuits.circuitId WHERE races.raceId=?", [$ref]
+        "SELECT races.name, circuits.name, circuits.location, circuits.country 
+        FROM races 
+        JOIN circuits ON races.circuitId = circuits.circuitId 
+        WHERE races.raceId=? AND races.year=2022",
+        [$ref]
     );
 
     return json_encode($racesSpec);
