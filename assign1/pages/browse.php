@@ -76,7 +76,6 @@
                         echo "<td>".$qualifier['q3']."</td>";
                         echo '</tr>';
                     };
-                }
             ?>
         </div>
     </section>
