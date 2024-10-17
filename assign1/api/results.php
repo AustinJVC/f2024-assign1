@@ -11,7 +11,13 @@ Returns all the results for a given driver, e.g., /api/results/driver/max_versta
 include 'db.inc.php';
 
 function getRaceResults($raceId){
-        $results = getData("SELECT drivers.driverRef, drivers.code, drivers.forename, drivers.surname,races.name, races.round, races.year, races.date,constructors.name, constructors.constructorRef, constructors.nationality FROM results JOIN races ON results.raceId = races.raceId JOIN drivers ON results.driverId = drivers.driverId JOIN constructors ON results.constructorId = constructors.constructorId   WHERE races.raceId=? ORDER BY results.grid ASC", [$raceId]);
+        $results = getData("SELECT drivers.driverRef, drivers.code, drivers.forename, drivers.surname,races.name, races.round, races.year, races.date,constructors.name, constructors.constructorRef, constructors.nationality 
+        FROM results 
+        JOIN races ON results.raceId = races.raceId 
+        JOIN drivers ON results.driverId = drivers.driverId 
+        JOIN constructors ON results.constructorId = constructors.constructorId   
+        WHERE races.raceId=? 
+        ORDER BY results.grid ASC", [$raceId]);
 
         echo json_encode($results); 
 }
