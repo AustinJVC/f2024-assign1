@@ -2,7 +2,7 @@
 include_once('db.inc.php');
 
 function getRaceResults($ref){
-        $results = getData("SELECT drivers.driverRef, drivers.code, drivers.forename, drivers.surname, races.name, races.round, races.year, races.date, constructors.name, constructors.constructorRef, constructors.nationality 
+        $results = getData("SELECT drivers.driverRef, drivers.code, drivers.forename, drivers.surname, races.name, races.round, races.year, races.date, constructors.name, constructors.constructorRef, constructors.nationality, results.time 
         FROM results 
         JOIN drivers ON drivers.driverId=results.driverId 
         JOIN constructors ON constructors.constructorId=results.constructorId 
@@ -11,7 +11,7 @@ function getRaceResults($ref){
         return json_encode($results); 
 }
 function getDriverResults($driver){
-    $results = getData("SELECT drivers.forename, drivers.surname, results.position, results.points, races.round, circuits.name
+    $results = getData("SELECT drivers.forename, drivers.surname, results.position, results.points, races.round, circuits.name, results.time
         from results 
         join drivers on drivers.driverId = results.driverId 
         join races on races.raceId = results.raceId
@@ -21,7 +21,7 @@ function getDriverResults($driver){
         return json_encode($results); 
 }
 function getConstructorResults($constructorRef){
-    $results = getData("SELECT drivers.forename, drivers.surname, results.position, results.points, races.round, circuits.name
+    $results = getData("SELECT drivers.forename, drivers.surname, results.position, results.points, races.round, circuits.name,  results.time
         from results 
         join drivers on drivers.driverId = results.driverId 
         join races on races.raceId = results.raceId

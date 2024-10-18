@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/browse.css">
+    
 </head>
 
 <body>
@@ -19,14 +21,14 @@
             <a href='apis.php'>APIs</a>
         </nav>
     </header>
-    <section>
+    <div class='container'>
         <aside>
             <?php
             include_once('../api/races.php');
             $races = json_decode(getAllRaces(), true);
 
+            echo '<h2>2022 Races</h2>';
             echo '<table>';
-            echo '<caption>2022 Races</caption>';
             echo '<tr>
                     <th>Rnd</th>
                     <th>Circuit</th>
@@ -52,7 +54,6 @@
                 $race = $_GET['ref'];
                 echo "<h2>Qualifying</h2>";
                 echo '<table>';
-                echo '<caption>Qualifying Results</caption>';
                 echo '<tr>
                         <th>Pos</th>
                         <th>Driver</th>
@@ -77,25 +78,43 @@
                 }    
                 echo "</table>";
                 echo "</div>";
+                echo "<hr>";
+                echo "<h2>Podium Results</h2>";
                 echo "<div class=results>";
-
+                
                 include_once('../api/results.php');
-                //echo getRaceResults($race);
+
                 $results = json_decode(getRaceResults($race));
 
                 for($i = 0; $i<3; $i++){
-                    echo "<div class=top3-results>";
+                    echo "<div class='top3-results result$i'>";
                     echo "<img src='../images/$i.png' style='width:50px;'>";
+                    echo "<br>";
                     echo $results[$i]->forename." ".$results[$i]->surname;
+                    echo "<br>";
+                    $time = $results[$i]->time;
+                    if($time[0]!="+" && $i!=0){
+                        $time = "+".$time;
+                    }
+                    echo "<p> ($time) </p>";
                     echo "</div>";
                 };
                 
                 echo "<div class=full-results>";
-                echo "<ol>";
-                foreach($results as $result){
-                    echo "<li>.".$result->forename." ".$result->surname.".</li>";
+                echo "<ul>";
+                for($i=3; $i<count($results); $i++){
+                    echo "<li> $i. ".$results[$i]->forename." ".$results[$i]->surname;
+                    $time = $results[$i]->time;
+                    if ($time==null){
+                        $time="DNF";
+                    }elseif($time[0]!="+"){
+                        $time = "+".$time;
+                    }
+
+                    echo " ($time) </li>";
                 }
-                echo "</ol>";
+                
+                echo "</ul>";
                 echo "</div>";
 
                 echo "</div>";
@@ -105,7 +124,7 @@
             }
             ?>
         </div>
-    </section>
+    </div>
 </body>
 
 </html>

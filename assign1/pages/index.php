@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <header>
         <h1> F1 Dashboard Project </h1>
         <nav>
@@ -17,6 +18,7 @@
             <a href='apis.php'>APIs</a>
         </nav>
     </header>
+    
     <div class="container">
 
         <aside>

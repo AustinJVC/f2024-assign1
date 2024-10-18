@@ -12,40 +12,44 @@
 </head>
 
 <body>
-    <h1> F1 Dashboard Project </h1>
-    <nav>
-        <a href='index.php'>Home</a>
-        <a href='browse.php'>Browse</a>
-        <a href='apis.php'>APIs</a>
-    </nav>
-    <aside>
-        <?php
+    <header>
+        <h1> F1 Dashboard Project </h1>
+        <nav>
+            <a href='index.php'>Home</a>
+            <a href='browse.php'>Browse</a>
+            <a href='apis.php'>APIs</a>
+        </nav>
+    </header>
+    <div class='container'>
+        <aside>
+            <?php
 
-        include_once('../api/constructors.php');
-        $constructorRef = $_GET['ref'];
-
-
-        $constructor = json_decode(getSpecificConstructors($constructorRef), true);
-
-        $constructor = $constructor[0];
+            include_once('../api/constructors.php');
+            $constructorRef = $_GET['ref'];
 
 
+            $constructor = json_decode(getSpecificConstructors($constructorRef), true);
 
-        echo "Constructor Details";
-        echo "<ul>";
-        echo "<li>" . $constructor['name'] . "</li>";
-        echo "<li>" . $constructor['nationality'] . "</li>";
-        echo "<li><a target=_blank href=" . $constructor['url'] . ">Website</a></li>";
+            $constructor = $constructor[0];
 
 
 
+            echo "Constructor Details";
+            echo "<ul>";
+            echo "<li>" . $constructor['name'] . "</li>";
+            echo "<li>" . $constructor['nationality'] . "</li>";
+            echo "<li><a target=_blank href=" . $constructor['url'] . ">Website</a></li>";
 
-        ?>
-    </aside>
-    <div class='content'>
 
-    <?php
-                
+
+
+            ?>
+        
+        </aside>
+        <div class='content'>
+
+            <?php
+                        
                 if (isset($_GET['ref'])) {
                     $constructorRef = $_GET['ref'];
                     echo '<table>';
@@ -56,8 +60,8 @@
                             <th>Driver</th>
                             <th>Pos</th>
                             <th>Points</th>
-                          </tr>';
-    
+                        </tr>';
+
                 include_once('../api/results.php');
 
                 $results = json_decode(getConstructorResults($constructorRef), true);
@@ -75,6 +79,7 @@
                 }
                 
             ?>
+        </div>
     </div>
 </body>
 

@@ -8,6 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/constructorsdrivers.css">
     </head>
     <body>
         <header>
@@ -18,6 +19,7 @@
             <a href='apis.php'>APIs</a>
         </nav>
         </header>
+        <div class='container'>
             <aside>
                 <?php
                     
@@ -32,21 +34,21 @@
                     $birthday = new DateTime($driver['dob']);
                     $age = $now->diff($birthday)->format('%y years');
 
-                    echo "Driver Details";
+                    echo "<h2>Driver Details</h2>";
                     echo "<ul>";
-                    echo "<li>".$driver['forename']." ".$driver['surname']."</li>";
-                    echo "<li>".$driver['dob']."</li>";
-                    echo "<li>".$age."</li>";
-                    echo "<li>".$driver['nationality']."</li>";
+                    echo "<li class=name>".$driver['forename']." ".$driver['surname']."</li>";
+                    echo "<li class=dob>".$driver['dob']."</li>";
+                    echo "<li class=age>".$age."</li>";
+                    echo "<li class=nationality>".$driver['nationality']."</li>";
                     echo "<li><a target=_blank href=".$driver['url'].">Website</a></li>";
-                    
+                    echo "</ul>"
                 
                     
                     
                 ?>
             </aside>
-        <div class='content'>
-                    
+            <div class='content'>
+
             <?php
                 
                 if (isset($_GET['ref'])) {
@@ -79,6 +81,7 @@
                     }
                 
             ?>
+            </div>
         </div>
     </body>
 </html>
