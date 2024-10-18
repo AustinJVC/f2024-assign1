@@ -16,7 +16,7 @@ function getDriverResults($driver){
         join drivers on drivers.driverId = results.driverId 
         join races on races.raceId = results.raceId
         join circuits on circuits.circuitId = races.circuitId
-        where drivers.driverRef=?", [$driver]);
+        where drivers.driverRef=? AND races.year=2022", [$driver]);
 
         return json_encode($results); 
 }
@@ -27,7 +27,7 @@ function getConstructorResults($constructorRef){
         join races on races.raceId = results.raceId
         join circuits on circuits.circuitId = races.circuitId
         join constructors on constructors.constructorId = results.constructorId
-        where constructors.constructorRef=?", [$constructorRef]);
+        where constructors.constructorRef=? AND races.year=2022", [$constructorRef]);
 
         return json_encode($results); 
 }
