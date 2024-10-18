@@ -18,6 +18,12 @@
             <a href='apis.php'>APIs</a>
         </nav>
     </header>
+    <div class='background-image'>
+        <div class='grid'>
+            <h2>COMP 3512: Assignment F1</h2><br>
+            <a href=browse.php>Browse</a>
+        </div>
+        </div>
 
     <div class="container">
 
@@ -30,9 +36,8 @@
                 The frontend features a clean, responsive design using HTML and CSS, ensuring a user-friendly
                 experience. This project reflects our skills in integrating various technologies to create an engaging
                 platform for Formula 1 fans.</p>
-            <h3><a href="browse.php">Browse 2022 Season</a></h3>
 
-            <a href="">Github Link</a>
+            <a target="_blank" href="https://github.com/AustinJVC/f2024-assign1">Github Link</a>
         </div>
     </div>
 </body>

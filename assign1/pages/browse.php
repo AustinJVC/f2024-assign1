@@ -47,9 +47,10 @@
             ?>
         </aside>
 
-        <div class='content'>
+        
             <?php
             if (isset($_GET['ref'])) {
+                echo "<div class='content'>";
                 echo "<div class=qualifying>";
                 $race = $_GET['ref'];
                 echo "<h2>Qualifying</h2>";
@@ -120,8 +121,9 @@
 
                 echo "</div>";
             } else {
-                echo '<h1>Select A Race</h1>';
-
+                echo "<div class='no-race-selected'>";
+                echo '<h2>Select A Race</h2>';
+                echo '</div>';
             }
             ?>
         </div>
