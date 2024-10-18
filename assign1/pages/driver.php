@@ -36,10 +36,10 @@
 
                     echo "<h2>Driver Details</h2>";
                     echo "<ul>";
-                    echo "<li class=name>".$driver['forename']." ".$driver['surname']."</li>";
-                    echo "<li class=dob>".$driver['dob']."</li>";
-                    echo "<li class=age>".$age."</li>";
-                    echo "<li class=nationality>".$driver['nationality']."</li>";
+                    echo "<li class=name> Name: ".$driver['forename']." ".$driver['surname']."</li>";
+                    echo "<li class=dob> DOB: ".$driver['dob']."</li>";
+                    echo "<li class=age> Age: ".$age."</li>";
+                    echo "<li class=nationality> Nationality: ".$driver['nationality']."</li>";
                     echo "<li><a target=_blank href=".$driver['url'].">Website</a></li>";
                     echo "</ul>"
                 
