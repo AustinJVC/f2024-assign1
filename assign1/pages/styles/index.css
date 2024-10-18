@@ -1,0 +1,14 @@
+body {
+    background-image: url("../../images/Home1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+}
+
+.content {
+    background-color: transparent;
+    align-self: center;
+
+}

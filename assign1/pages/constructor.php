@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/constructorsdrivers.css">
 </head>
 
 <body>
@@ -34,27 +35,27 @@
 
 
 
-            echo "Constructor Details";
+            echo "<h2>Constructor Details</h2>";
             echo "<ul>";
-            echo "<li>" . $constructor['name'] . "</li>";
-            echo "<li>" . $constructor['nationality'] . "</li>";
+            echo "<li> Name: " . $constructor['name'] . "</li>";
+            echo "<li> Nationality: " . $constructor['nationality'] . "</li>";
             echo "<li><a target=_blank href=" . $constructor['url'] . ">Website</a></li>";
 
 
 
 
             ?>
-        
+
         </aside>
         <div class='content'>
 
             <?php
-                        
-                if (isset($_GET['ref'])) {
-                    $constructorRef = $_GET['ref'];
-                    echo '<table>';
-                    echo '<caption>Race Results</caption>';
-                    echo '<tr>
+
+            if (isset($_GET['ref'])) {
+                $constructorRef = $_GET['ref'];
+                echo '<table>';
+                echo '<caption>Race Results</caption>';
+                echo '<tr>
                             <th>Rnd</th>
                             <th>Circuit</th>
                             <th>Driver</th>
@@ -65,19 +66,20 @@
                 include_once('../api/results.php');
 
                 $results = json_decode(getConstructorResults($constructorRef), true);
-                
-                    foreach($results as $result){
-                        echo '<tr>';
-                        echo "<td>".$result['round']."</td>";
-                        echo "<td>".$result['name']."</td>";
-                        echo "<td>".$result['forename']." ".$result['surname']."</td>";
-                        echo "<td>".$result['position']."</td>";
-                        echo "<td>".$result['points']."</td>";
-                        echo '</tr>';
-                    };
-                        echo "</table>";
+
+                foreach ($results as $result) {
+                    echo '<tr>';
+                    echo "<td>" . $result['round'] . "</td>";
+                    echo "<td>" . $result['name'] . "</td>";
+                    echo "<td>" . $result['forename'] . " " . $result['surname'] . "</td>";
+                    echo "<td>" . $result['position'] . "</td>";
+                    echo "<td>" . $result['points'] . "</td>";
+                    echo '</tr>';
                 }
-                
+                ;
+                echo "</table>";
+            }
+
             ?>
         </div>
     </div>
