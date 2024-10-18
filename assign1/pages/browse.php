@@ -46,6 +46,7 @@
         <div class='content'>
             <?php
             if (isset($_GET['ref'])) {
+            echo "<div class=qualifying>";   
                 $race = $_GET['ref'];
                 echo "<h2>Qualifying</h2>";
                 echo '<table>';
@@ -71,9 +72,31 @@
                     echo "<td>" . $qualifier['q2'] . "</td>";
                     echo "<td>" . $qualifier['q3'] . "</td>";
                     echo '</tr>';
-                }
-                ;
+                }    
                 echo "</table>";
+                echo "</div>";
+                echo "<div class=results>";
+
+                include_once('../api/results.php');
+                //echo getRaceResults($race);
+                $results = json_decode(getRaceResults($race));
+
+                for($i = 0; $i<3; $i++){
+                    echo "<div class=top3-results>";
+                    echo "<img src='../images/$i.png' style='width:50px;'>";
+                    echo $results[$i]->forename." ".$results[$i]->surname;
+                    echo "</div>";
+                };
+                
+                echo "<div class=full-results>";
+                echo "<ol>";
+                foreach($results as $result){
+                    echo "<li>.".$result->forename." ".$result->surname.".</li>";
+                }
+                echo "</ol>";
+                echo "</div>";
+
+                echo "</div>";
             } else {
                 echo '<h1>Select A Race</h1>';
 
