@@ -7,16 +7,18 @@
     <title>F1 Dashboard Project</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <h1> F1 Dashboard Project </h1>
-    <nav>
-        <a href='index.php'>Home</a>
-        <a href='browse.php'>Browse</a>
-        <a href='apis.php'>APIs</a>
-    </nav>
+    <header>
+        <h1> F1 Dashboard Project </h1>
+        <nav>
+            <a href='index.php'>Home</a>
+            <a href='browse.php'>Browse</a>
+            <a href='apis.php'>APIs</a>
+        </nav>
+    </header>
     <section>
         <aside>
             <?php

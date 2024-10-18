@@ -4,13 +4,17 @@ body {
 
 }
 
+header{
+    background-color: #A6051A;
+}
+
 nav {
     margin-bottom: 20px;
     text-align: right;
 }
 
 nav a {
-    background-color: #6AABCE;
+    background-color: #e40523;
     color: white;
     font-weight: 600;
     border-radius: 0.2em;
