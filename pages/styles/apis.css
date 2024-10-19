@@ -1,0 +1,13 @@
+.content {
+    width: 60em;
+    margin:2em;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    padding: 10px;
+}
