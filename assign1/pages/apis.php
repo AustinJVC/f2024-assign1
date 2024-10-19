@@ -42,27 +42,20 @@
                 ?>
             <h2>API List</h2>
             <span>
-                <h3>URL</h3>
-                <ul>
                     <?php
-                    echo "<ol>";
+                    echo "<table>";
+                    echo "<tr>";
+                    echo "<th>URL</th>";
+                    echo "<th>Description</th>";
+                    echo "</tr>";
                     foreach ($apiList as $api) {
-                        echo "<li>$api[0]</li>";
+                        echo "</tr>";
+                        echo "<td>$api[0]</td>";
+                        echo "<td>$api[1]</td>";
+                        echo "</tr>";
                     }
-                    echo "</ol>"
+                    echo "</table>"
                         ?>
-                </ul>
-            </span>
-            <span>
-                <h3>Description</h3>
-                <ul>
-                    <?php
-                    echo "<ol>";
-                    foreach ($apiList as $api) {
-                        echo "<li>$api[1]</li>";
-                    }
-                    echo "</ol>";
-                    ?>
                 </ul>
             </span>
         </div>

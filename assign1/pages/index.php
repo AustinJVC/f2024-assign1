@@ -23,21 +23,21 @@
             <h2>COMP 3512: Assignment F1</h2><br>
             <a href=browse.php>Browse</a>
         </div>
-        </div>
+    </div>
 
     <div class="container">
 
         <div class="content">
             <h2>Description</h2>
-            <p>The F1 Dashboard Project, developed by Austin Vande Cappelle and Jordan Kulcsar, is a web application
-                that provides users with comprehensive information about the 2022 Formula 1 season.
-                We utilized PHP for backend processing, made API calls to retrieve data on races, drivers, and
-                constructors, and established a database connection for efficient data management.
+            <p> The F1 Dashboard Project, developed by Austin Vande Cappelle and Jordan Kulcsar, is a web application
+                that provides users with comprehensive information about the 2022 Formula 1 season. <br><br>
+                We utilized PHP for backend processing, made API calls to retrieve data on races, drivers, and 
+                constructors, and established a database connection to retrieve such data. <br><br>
                 The frontend features a clean, responsive design using HTML and CSS, ensuring a user-friendly
                 experience. This project reflects our skills in integrating various technologies to create an engaging
                 platform for Formula 1 fans.</p>
 
-            <a target="_blank" href="https://github.com/AustinJVC/f2024-assign1">Github Link</a>
+            <a target="_blank" href="https://github.com/AustinJVC/f2024-assign1">Github Repo</a>
         </div>
     </div>
 </body>
