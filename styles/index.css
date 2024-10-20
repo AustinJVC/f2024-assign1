@@ -1,6 +1,6 @@
 .background-image {
     display:flex;
-    background-image: url("../../images/Home1.png");
+    background-image: url("../images/Home1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

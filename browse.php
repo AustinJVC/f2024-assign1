@@ -88,7 +88,7 @@
 
                 for ($i = 0; $i < 3; $i++) {
                     echo "<div class='top3-results result$i'>";
-                    echo "<img src='../images/$i.png' style='width:50px;'>";
+                    echo "<img src='images/$i.png' style='width:50px;'>";
                     echo "<br>";
                     echo $results[$i]['forename'] . " " . $results[$i]['surname'];
                     echo "<br>";

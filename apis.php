@@ -50,7 +50,7 @@
                     echo "</tr>";
                     foreach ($apiList as $api) {
                         echo "</tr>";
-                        echo "<td> <a target='__blank' href='..$api[2]'> $api[0] </a> </td>";
+                        echo "<td> <a target='__blank' href='.$api[2]'> $api[0] </a> </td>";
                         echo "<td>$api[1]</td>";
                         echo "</tr>";
                     }
