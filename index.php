@@ -42,8 +42,7 @@
                 platform for Formula 1 fans.
             </p>
 
-                <strong>Please note, APIs have been hosted on a seperate server."</strong><br>
-                    <strong>We attempted to circumvent this, however we failed.</strong>
+                <strong>Please note, APIs have been hosted on a seperate server.</strong><br>
                 <br><br><br>
 
             <a target="_blank" href="https://github.com/AustinJVC/f2024-assign1" style='text-decoration:none; color:black; border-style:solid; border-width:2px; padding:15px; border-radius:7px;'>Github Repo</a>
