@@ -24,7 +24,7 @@
     <div class='container'>
         <aside>
             <?php
-            $races = file_get_contents('http://localhost/f2024-assign1/api/races.php');
+            $races = file_get_contents('https://api.austinvc.ca/f1/races.php');
             $races = json_decode($races, true);
 
             echo '<h2>2022 Races</h2>';
@@ -64,7 +64,7 @@
                         <th>Q3</th>
                       </tr>';
 
-                $qualifying = file_get_contents("http://localhost/f2024-assign1/api/qualifying.php?ref=$race");
+                $qualifying = file_get_contents("https://api.austinvc.ca/f1/qualifying.php?ref=$race");
                 $qualifying = json_decode($qualifying, true);
 
                 foreach ($qualifying as $qualifier) {
@@ -83,7 +83,7 @@
                 echo "<h2>Podium Results</h2>";
                 echo "<div class=results>";
 
-                $results = file_get_contents('http://localhost/f2024-assign1/api/results.php?ref='.$race);
+                $results = file_get_contents('https://api.austinvc.ca/f1/results.php?ref='.$race);
                 $results = json_decode($results, true);
 
                 for ($i = 0; $i < 3; $i++) {

@@ -24,7 +24,7 @@
                 <?php
                     $driverRef = $_GET['ref'];                    
                     
-                    $driver = file_get_contents('http://localhost/f2024-assign1/api/drivers.php?ref='.$driverRef);
+                    $driver = file_get_contents('https://api.austinvc.ca/f1/drivers.php?ref='.$driverRef);
                     $driver = json_decode($driver, true);
 
                     $driver = $driver[0];
@@ -61,7 +61,7 @@
                             <th>Points</th>
                           </tr>';
     
-                          $results = file_get_contents('http://localhost/f2024-assign1/api/results.php?driver='.$driverRef);
+                          $results = file_get_contents('https://api.austinvc.ca/f1/results.php?driver='.$driverRef);
                           $results = json_decode($results, true);
                 
                     foreach($results as $result){

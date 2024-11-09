@@ -26,7 +26,7 @@
             <?php
             $constructorRef = $_GET['ref'];
 
-            $constructor = file_get_contents('http://localhost/f2024-assign1/api/constructors.php?ref='.$constructorRef);
+            $constructor = file_get_contents('https://api.austinvc.ca/f1/constructors.php?ref='.$constructorRef);
             $constructor = json_decode($constructor, true);
 
             $constructor = $constructor[0];
@@ -59,7 +59,7 @@
                             <th>Points</th>
                         </tr>';
 
-                $results = file_get_contents('http://localhost/f2024-assign1/api/results.php?constructorRef='.$constructorRef);
+                $results = file_get_contents('https://api.austinvc.ca/f1/results.php?constructorRef='.$constructorRef);
                 $results = json_decode($results, true);
 
                 foreach ($results as $result) {

@@ -42,7 +42,7 @@
                 platform for Formula 1 fans.
             </p>
 
-                <strong>Please note, if API's do not work, they're hard coded as "http://localhost/f2024-assign1/api/api_name.php"</strong><br>
+                <strong>Please note, APIs have been hosted on a seperate server."</strong><br>
                     <strong>We attempted to circumvent this, however we failed.</strong>
                 <br><br><br>
 
